@@ -1,0 +1,26 @@
+// Convert HTML Entities
+// Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+function convertHTML(str) {
+  let ampersand = /&/g;
+  let ampersandReplace = "&amp;";
+  let newAmpersandStr = str.replace(ampersand, ampersandReplace);
+
+  let leftArrow = /</g;
+  let leftArrowReplace = "&lt;";
+  let newLeftArrowStr = newAmpersandStr.replace(leftArrow, leftArrowReplace);
+
+  let rightArrow = />/g;
+  let rightArrowReplace = "&gt;";
+  let newRightArrowStr = newLeftArrowStr.replace(rightArrow, rightArrowReplace);
+
+  let doubleQuote = /\"/g;
+  let doubleQuoteReplace = "&quot;";
+  let newDoubleQuoteStr = newRightArrowStr.replace(doubleQuote, doubleQuoteReplace); 
+
+  let apostrophe = /\'/g;
+  let apostropheReplace = "&apos;";
+  let finalStr = newDoubleQuoteStr.replace(apostrophe, apostropheReplace);
+  
+  return finalStr;
+}
