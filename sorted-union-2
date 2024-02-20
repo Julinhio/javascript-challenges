@@ -1,0 +1,15 @@
+// Sorted Union - Solution 2
+// Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+function uniteUnique(...arr) {
+  let flatArr = arr.flat();
+  let result = [];
+  
+  for (let i = 0; i < flatArr.length; i++) {
+    if (!result.includes(flatArr[i])) {
+      result.push(flatArr[i]);
+    }
+  }
+
+  return result;
+}
