@@ -1,0 +1,15 @@
+// Binary Agents
+// Return an English translated sentence of the passed binary string. The binary string will be space separated.
+
+function binaryAgent(str) {
+  // Split the binary string into an array of binary "words"
+  let binaryWords = str.split(" ");
+
+  // Map over each binary "word" and convert it to the corresponding character
+  let sentence = binaryWords.map(binary => {
+    // Convert the binary "word" to a decimal number, then to the corresponding character
+    return String.fromCharCode(parseInt(binary, 2));
+  }).join(""); // Join the characters back into a sentence
+
+  return sentence;
+}
