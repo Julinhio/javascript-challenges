@@ -1,0 +1,8 @@
+// Spinal Tap Case
+// Converting a string to spinal case using RegEx.
+
+function spinalCase(str) {
+  let newStr = str.replace(/\s+|\_|(?<=[a-z])(?=[A-Z])/g, "-");
+  let result = newStr.toLowerCase();
+  return result;
+}
