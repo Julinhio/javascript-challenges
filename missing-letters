@@ -1,0 +1,13 @@
+// Missing letters
+// Find the missing letter in the passed letter range and return it. If all letters are present in the range, return undefined.
+
+function fearNotLetter(str) {
+  for (let i = 0; i < str.length; i++) {
+    let expectedCharCode = str.charCodeAt(i) + 1;
+
+    if (expectedCharCode !== str.charCodeAt(i + 1)) {
+      return String.fromCharCode(expectedCharCode);
+    }
+  }
+  return undefined;
+}
