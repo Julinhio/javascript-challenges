@@ -1,0 +1,21 @@
+// Pig Latin Pig Latin is a way of altering English Words. The rules are as follows:
+
+// If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add ay to it.
+// If a word begins with a vowel, just add way at the end.
+
+function translatePigLatin(str) {
+  let firstVowelMatch = str.match(/[aeiou]/i);
+  let firstVowelIndex = firstVowelMatch ? firstVowelMatch.index : -1;
+
+  let consonantCluster = str.slice(0, firstVowelIndex);
+  let strWithoutCluster = str.slice(firstVowelIndex);
+
+  if(firstVowelIndex === -1) {    // If no vowels
+    return str + "ay";
+  } else if (firstVowelIndex === 0) {   // If starts with a vowel
+    return str + "way";
+  } else {
+    return strWithoutCluster + consonantCluster + "ay";
+  }
+
+}
