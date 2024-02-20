@@ -1,0 +1,18 @@
+// Search and Replace 
+// Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+
+function myReplace(str, before, after) {
+
+  let b = before.charAt(0);   // 'before' first char
+  let a = after.charAt(0);    // 'after' first char
+  let splitted = [];
+
+  if (b === b.toLowerCase()) {
+    return str.replace(before, after.toLowerCase());
+  } else if (b === b.toUpperCase()) {
+    splitted = after.split("");         // split 'after' by chars 1 by 1
+    splitted[0] = a.toUpperCase();      // update the first char of array
+    after = splitted.join("");     // Join the array back into a string without commas
+    return str.replace(before, after)
+  }
+}
