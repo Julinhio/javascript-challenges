@@ -1,0 +1,16 @@
+// Sum All Odd Fibonacci Numbers
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+function sumFibs(num) {
+  let fibSequence = [0, 1];
+  for (let i = 0; i < num + 1; i ++) {
+    fibSequence.push(fibSequence[i + 1] + fibSequence[i]);
+  }
+  let result = 0;
+  for (let j = 0; j < fibSequence.length; j++) {
+    if (fibSequence[j] % 2 !== 0 && fibSequence[j] <= num) {
+      result = result + fibSequence[j];
+    }
+  }
+  return result;
+}
