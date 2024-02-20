@@ -1,0 +1,20 @@
+// Steamroller
+// Flatten a nested array. You must account for varying levels of nesting.
+
+function steamrollArray(arr) {
+  let flattened = [];
+
+  // Define a helper function that will handle the flattening
+  const flatten = function(element) {
+    // If the element is not an array, push it to the 'flattened' array
+    if (!Array.isArray(element)) {
+      flattened.push(element);
+    } else {
+      // If the element is an array, recursively flatten it
+      element.forEach(flatten);
+    }
+  };
+  // Start the flattening process for the initial array
+  arr.forEach(flatten);
+  return flattened;
+}
